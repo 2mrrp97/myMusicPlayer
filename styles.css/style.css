@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans Mono", monospace;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  margin: 0px;
+  padding: 5px;
+}
+
+img {
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(196, 160, 94);
+}
+
+a:hover {
+  color: rgb(196, 160, 94);
+}
+#main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  background: linear-gradient(to left, #7c7c7c, #252525);
+  padding: 0;
+}
+
+/* stytling both palying div and solg list div */
+#playing,
+#songList {
+  border: none;
+  outline: none;
+  width: 40vw;
+  min-height: 80vh;
+  display: inline-block;
+  min-width: 250px;
+  min-height: 90vh;
+  box-shadow: 2px 2px 10px black;
+  background-color: rgb(26, 26, 26);
+  color: wheat;
+  padding: 10px;
+  margin: 20px;
+}
+
+/* playing song div start */
+#songimg {
+  display: block;
+  height: 300px;
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 5px solid rgb(216, 52, 107);
+  min-width: 250px;
+  max-width: 500px;
+}
+#playing div {
+  margin: 10px auto;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+button {
+  background: none;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+}
+button:active {
+  opacity: 0.8;
+}
+
+button img {
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+button img:hover {
+  opacity: 0.9;
+}
+
+#volumeimg,
+#muteimg {
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 5px;
+  border-radius: 10px;
+  background-color: rgb(216, 52, 107);
+  margin: 20px;
+  width: 60%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #f74e4e;
+  cursor: pointer;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: wheat;
+}
+
+#volController {
+  margin: 10px;
+}
+
+/* playing song div end */
+
+/* song list div css start */
+
+#songList {
+  background-color: rgba(26, 26, 26, 0.8);
+  max-height: 650px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.songDesc {
+  width: 100%;
+  border-top: 0.5px solid wheat;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.songDesc div {
+  height: 90px;
+  display: inline-block;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.songDesc img {
+  height: 90px;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.songDesc:hover {
+  cursor: pointer;
+  background: rgba(22, 22, 22, 0.5);
+}
+
+.inputs {
+  background: none;
+  border: none;
+  border-bottom: 1px solid wheat;
+  outline: none;
+  padding: 5px;
+  color: wheat;
+  font-weight: bolder;
+}
+/* song list css end */
+
+@media (max-width: 380px) {
+  #albumimg {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  #playing,
+  #songList {
+    width: 100vw;
+    margin: 20px 0;
+  }
+}
+
+/* modify default scroll bar of browser */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px rgb(14, 14, 14);
+  background: rgb(224, 62, 116);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(43, 43, 43);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(94, 93, 93);
+}
+
+/* modify default scroll bar of browser end */
+
+/* misc and helpers */
+
+.hidden {
+  display: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.spinner {
+  animation-name: spin;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.reset-spin {
+  transform: rotate(0);
+}

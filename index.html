@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musicPlayer</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body id="main">
+
+    <div id="playing">
+        <h1 id="artist_name">Artist : </h1>
+        <h2 id="song_name">Song : </h2>
+        <h4 id="song_count"> </h4>
+        <img id="songimg" src="./images/2.jpg" alt="song picture" class="spinner" style="animation-play-state: paused;">
+        <div>
+            <button id="prev"><img src="./images/previous.png"></img></button>
+            <button id="play"><img src="./images/play.png"></img></button>
+            <button id="pause" class="hidden"><img src="./images/pause.png"></img></button>
+            <button id="next"><img src="./images/previous.png" style="transform: rotate(180deg);"></button>
+        </div>
+
+        <div>
+
+            <span style="padding-top: 10px;">ctime</span>
+            <input id="durationController" type="range" min="0" max="100" value="0">
+            <span style="padding-top: 10px;">total</span>
+
+        </div>
+        <div>
+            <div>
+                <img id="volumeimg" src="./images/high-volume.png" alt="Volume img">
+                <img id="muteimg" src="./images/mute.png" alt="Volume img" class="hidden">
+                <input id="volController" type="range" min="0" max="100" value="100">
+            </div>
+        </div>
+    </div>
+
+    <div id="songList">
+
+        <div id="listtitle">
+            <h1 style="margin-bottom: 5px; padding: 20px;  ">Songs List
+            </h1>
+
+            <div style="margin-bottom: 10px; padding: 0 20px; ">
+                <span>Browse by : </span>
+                <input id="search" class="inputs" type="text" placeholder="Type Song name">
+            </div>
+        </div>
+
+        <div id="list">
+
+        </div>
+
+    </div>
+
+
+    <div style="margin : 20px ; color : wheat; display: block; width :100vw;">
+        <h4>This webpage is developed by <a href="https://github.com/2mrrp97" target="_blank">mrrp</a>.</h4>
+        <h4><a href="#" target="_blank">View source code</a></h4>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script defer src="./js/script.js"></script>
+<script>
+
+
+</script>
+
+</html>
