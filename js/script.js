@@ -112,7 +112,7 @@ window.addEventListener('load', () => {
     $('#currsong')[0].dataset.songPath = song.songPath;
     populate_songsList(songs, nSongs);
 
-    window.dispatchEvent(new Event("click"));
+    window.dispatchEvent(new Event("click")); // for over ride chrome autoplay song policy on page load  
     setTimeout(() => {
         audio = new Audio(song.songPath);
         audio.play();
