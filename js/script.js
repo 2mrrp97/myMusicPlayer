@@ -112,7 +112,7 @@ window.addEventListener('load', () => {
     $('#currsong')[0].dataset.songPath = song.songPath;
     populate_songsList(songs, nSongs);
 
-    document.dispatchEvent(new Event("someEvent"));
+    window.dispatchEvent(new Event("click"));
     setTimeout(() => {
         audio = new Audio(song.songPath);
         audio.play();
