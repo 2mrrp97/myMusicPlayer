@@ -15,29 +15,31 @@
 <body id="main">
 
     <div id="playing">
-        <h1 id="artist_name">Artist : </h1>
-        <h2 id="song_name">Song : </h2>
-        <h4 id="song_count"> </h4>
-        <img id="songimg" src="./images/2.jpg" alt="song picture" class="spinner" style="animation-play-state: paused;">
+        <h1 id="artist_name">Artist : # </h1>
+        <h2 id="song_name">Song : #</h2>
+        <h4 id="song_count"> # / # </h4>
+        <img id="songimg" src="./images/1.jpg" alt="song picture" class="spinner"
+            style="animation-play-state: running;">
+        <span id="currsong" data-songpath="./songs/tron.mp3" hidden></span>
         <div>
             <button id="prev"><img src="./images/previous.png"></img></button>
-            <button id="play"><img src="./images/play.png"></img></button>
-            <button id="pause" class="hidden"><img src="./images/pause.png"></img></button>
+            <button id="play" class="hidden"><img src="./images/play.png"></img></button>
+            <button id="pause"><img src="./images/pause.png"></img></button>
             <button id="next"><img src="./images/previous.png" style="transform: rotate(180deg);"></button>
         </div>
 
         <div>
 
-            <span style="padding-top: 10px;">ctime</span>
+            <span id="currTime" style="padding-top: 10px;">00:00</span>
             <input id="durationController" type="range" min="0" max="100" value="0">
-            <span style="padding-top: 10px;">total</span>
+            <span id="totalTime" style="padding-top: 10px;">00:00</span>
 
         </div>
         <div>
             <div>
                 <img id="volumeimg" src="./images/high-volume.png" alt="Volume img">
                 <img id="muteimg" src="./images/mute.png" alt="Volume img" class="hidden">
-                <input id="volController" type="range" min="0" max="100" value="100">
+                <input id="volController" type="range" min="0" max="100" value="10">
             </div>
         </div>
     </div>
@@ -69,7 +71,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script defer src="./js/script.js"></script>
+<script src="./js/script.js"></script>
 <script>
 
 
