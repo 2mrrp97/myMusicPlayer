@@ -142,7 +142,8 @@ function populate_songsList(songs, nSongs) {
         $('#list').append(`<div class="songDesc"><span class = "serialNo" style = " width: 40px; text-align: center; padding: 35px 10px;" >${i + 1}</span><img id="albumimg" src="${songs[i].image}" alt="album cover"><div><h5 data-songName = "${songs[i].name}" class="text-left">Song : ${songs[i].name}</h5><h5 data-album = "${songs[i].album}" class="text-left">Album : ${songs[i].album} </h5><h5 data-artist = "${songs[i].artist} "class="text-left">Artist : ${songs[i].artist} </h5><span data-songpath = "${songs[i].songPath}" hidden></span></div></div>`);
     }
 
-    // event listener to change the current playing song if any song from this songlist is clicked
+    // add event listener to change the current playing song if any song from this songlist is clicked everytime the 
+    // user filter the song list from input field 
     $('.songDesc').click(function () {
 
         var childs = this.childNodes;
