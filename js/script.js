@@ -196,17 +196,17 @@ function set_song_data(songs_list, index) {
 $('#prev').on('click', () => {
     let s = $('#song_count').text().split("/")[0];
     let index = parseInt(s.slice(1, s.length)) - 1;
-    let songs = document.querySelectorAll('.songDesc');
-    index = index - 1 < 0 ? songs.length - 1 : index - 1;
-    set_song_data(songs, index);
+    let songList = document.querySelectorAll('.songDesc');
+    index = index - 1 < 0 ? songList.length - 1 : index - 1;
+    set_song_data(songList, index);
 });
 
 $('#next').on('click', () => {
     let s = $('#song_count').text().split("/")[0];
     let index = parseInt(s.slice(1, s.length)) - 1;
-    let songs = document.querySelectorAll('.songDesc');
-    index = (index + 1) % songs.length;
-    set_song_data(songs, index);
+    let songList = document.querySelectorAll('.songDesc');
+    index = (index + 1) % songList.length;
+    set_song_data(songList, index);
 });
 
 
