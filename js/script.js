@@ -75,7 +75,7 @@ const songs = [
 let nSongs = songs.length;
 let audio = null;
 var currPath = null;
-var playisActive = true;
+var playisActive = false;
 
 function convert_seconds_to_time(seconds) {
     let mins = Math.floor(seconds / 60);
@@ -111,14 +111,6 @@ window.addEventListener('load', () => {
     $('#songimg').addClass('spinner');
     $('#currsong')[0].dataset.songPath = song.songPath;
     populate_songsList(songs, nSongs);
-
-    window.dispatchEvent(new Event("click")); // for over ride chrome autoplay song policy on page load  
-    setTimeout(() => {
-        audio = new Audio(song.songPath);
-        audio.play();
-        set_time(audio);
-        volController.dispatchEvent(new Event('input'));
-    }, 10);
 
 });
 
@@ -233,6 +225,8 @@ $('#play').on('click', () => {
     $('#songimg').addClass('spinner');
     const running = simg.style.animationPlayState === 'running';
     simg.style.animationPlayState = running ? 'paused' : 'running';
+
+    audio = audio == null ? new Audio($('#currsong')[0].dataset.songpath) : audio;
     audio.play();
     playisActive = true;
 
