@@ -165,9 +165,12 @@ function populate_songsList(songs, nSongs) {
         $('#currsong')[0].dataset.songPath = songDescDiv[3].dataset.songpath;
 
         audio.pause();
-        audio = new Audio(songDescDiv[3].dataset.songpath);
-        audio.play();
-        volController.dispatchEvent(new Event('input'));
+        setTimeout(() => {
+            audio = new Audio(songDescDiv[3].dataset.songpath);
+            audio.play();
+            volController.dispatchEvent(new Event('input'));
+            $('#songimg').addClass('spinner');
+        }, 100);
     });
 }
 
@@ -187,9 +190,12 @@ function set_song_data(songs_list, index) {
     $('#currsong')[0].dataset.songPath = innerDiv[3].dataset.songpath;
 
     audio.pause();
-    audio = new Audio(innerDiv[3].dataset.songpath);
-    audio.play();
-    volController.dispatchEvent(new Event('input'));
+    setTimeout(() => {
+        audio = new Audio(innerDiv[3].dataset.songpath);
+        audio.play();
+        $('#songimg').addClass('spinner');
+        volController.dispatchEvent(new Event('input'));
+    }, 100);
 }
 
 
@@ -199,7 +205,6 @@ $('#prev').on('click', () => {
     let songs = document.querySelectorAll('.songDesc');
     index = index - 1 < 0 ? songs.length - 1 : index - 1;
     set_song_data(songs, index);
-
 });
 
 $('#next').on('click', () => {
@@ -208,8 +213,6 @@ $('#next').on('click', () => {
     let songs = document.querySelectorAll('.songDesc');
     index = (index + 1) % songs.length;
     set_song_data(songs, index);
-
-
 });
 
 
