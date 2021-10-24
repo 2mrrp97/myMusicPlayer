@@ -226,7 +226,12 @@ $('#play').on('click', () => {
     const running = simg.style.animationPlayState === 'running';
     simg.style.animationPlayState = running ? 'paused' : 'running';
 
-    audio = audio == null ? new Audio($('#currsong')[0].dataset.songpath) : audio;
+    // if no audio object then create one and dispatch volume setting event 
+    if (audio == null) {
+        audio = new Audio($('#currsong')[0].dataset.songpath);
+        volController.dispatchEvent(new Event('input'));
+    }
+
     audio.play();
     playisActive = true;
 
