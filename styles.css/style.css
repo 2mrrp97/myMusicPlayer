@@ -180,6 +180,11 @@ input[type="range"]:hover::-webkit-slider-thumb {
   color: wheat;
   font-weight: bolder;
 }
+#albumimg {
+  width: 20%;
+  min-width: 100px;
+  max-width: 150px;
+}
 /* song list css end */
 
 @media (max-width: 380px) {
